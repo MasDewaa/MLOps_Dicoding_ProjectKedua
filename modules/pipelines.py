@@ -58,16 +58,19 @@ if __name__ == '__main__':
     logging.set_verbosity(logging.INFO)
 
     from modules.components import init_components
+    from modules.components import PipelineConfig
 
     # Initialize pipeline components
-    pipeline_components = init_components(
-        DATA_ROOT,
+    config = PipelineConfig(
+        data_dir=DATA_ROOT,
         training_module=TRAINER_MODULE_FILE,
         transform_module=TRANSFORM_MODULE_FILE,
         training_steps=5000,
         eval_steps=1000,
         serving_model_dir=SERVING_MODEL_DIR,
     )
+
+    pipeline_components = init_components(config)
 
     # Create the pipeline object
     local_pipeline = initialize_local_pipeline(
