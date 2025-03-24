@@ -6,7 +6,7 @@ from tfx.orchestration.beam.beam_dag_runner import BeamDagRunner
 from tfx.orchestration import metadata, pipeline
 from tfx.orchestration.metadata import sqlite_metadata_connection_config
 
-PIPELINE_NAME = 'masdewa-hatespeech-pipeline'
+PIPELINE_NAME = 'masdewa-pipeline'
 
 DATA_ROOT = 'data'
 TRANSFORM_MODULE_FILE = 'modules/transform.py'
